@@ -81,6 +81,7 @@ function App() {
 
     useMemo(() => {
         checkWinner()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [turnArr])
 
     let content = msg === "" ? `${turn}'s turn` : msg
