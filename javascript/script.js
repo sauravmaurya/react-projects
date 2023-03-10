@@ -349,13 +349,13 @@
 
 
 
-// const a = new Map([["a","b"],["b","c"],["c","d"]])
+const a1 = new Map([["a", "b"], ["b", "c"], ["c", "d"]])
 
-// console.log(a.get("a"))
-// let b = a.keys()
-// for(let x of b){
-//     console.log(x)
-// }
+console.log(a1.get("a"))
+let b1 = a1.keys()
+for (let x in a1) {
+    console.log(a1[x])
+}
 
 
 // rest operator (numbers to array)
@@ -403,33 +403,33 @@
 
 
 
-function Person() {
-    return {
-        talk() {
-            return 'talking'
-        }
-    }
-}
+// function Person() {
+//     return {
+//         talk() {
+//             return 'talking'
+//         }
+//     }
+// }
 
-const p1 = Person();
-console.log(p1.talk())
+// const p1 = Person();
+// console.log(p1.talk())
 
 
-class Human {
-    talk() {
-        return 'talking';
-    }
-}
+// class Human {
+//     talk() {
+//         return 'talking';
+//     }
+// }
 
-const per1 = new Human()
+// const per1 = new Human()
 
-console.log(per1.talk())
+// console.log(per1.talk())
 
-class Singer extends Human {
-    sing() {
-        return 'singing';
-    }
-}
+// class Singer extends Human {
+//     sing() {
+//         return 'singing';
+//     }
+// }
 
-const sing1 = new Singer()
-console.log(sing1.sing(), sing1.talk())
+// const sing1 = new Singer()
+// console.log(sing1.sing(), sing1.talk())
