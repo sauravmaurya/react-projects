@@ -229,12 +229,99 @@ function mergeSort(arr) {
     if (arr.length < 2) {
         return arr
     }
-
-    let middleIndex = Math.floor(arr.length / 2)
+    let mid = Math.floor(arr.length / 2)
+    const leftArr = arr.slice(0, mid)
+    const rightArr = arr.slice(mid)
+    return merge(mergeSort(leftArr), mergeSort(rightArr))
 }
 
-console.log(mergeSort([2, 18, -1, 42, -66]))
-console.log(mergeSort([-18, -2, -1, 42, 66]))
-// worst case : O(n^2)
-// avg case : O(nlogn)
+function merge(leftArr, rightArr) {
+    const sortedArray = []
+    while (leftArr.length && rightArr.length) {
+        if (leftArr[0] >= rightArr[0]) {
+            sortedArray.push(rightArr[0])
+            rightArr.shift()
+        }
+        else {
+            sortedArray.push(leftArr[0])
+            leftArr.shift()
+        }
+    }
+    return [...sortedArray, ...leftArr, ...rightArr]
+}
+
+// console.log(mergeSort([2, 18, -1, 42, -66]))
+// console.log(mergeSort([-18, -2, -1, 42, 66]))
+// // Big O : O(nlogn)
+
+
+const palindrome = (str) => {
+    const strArr = str.split("")
+    let reverseArr = [];
+    for (let i = strArr.length - 1; i >= 0; i--) {
+        reverseArr.push(strArr[i])
+    }
+
+    if (strArr.toString() === reverseArr.toString()) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+// console.log(palindrome("saddas"))
+// console.log(palindrome("saurav"))
+// Big O = O(n)
+
+const palindromeSingleArray = (str) => {
+    let i = 0
+    let j = str.length - 1
+    while ((j - i) < 1) {
+        if (str[i] === str[j]) {
+            i += 1
+            j -= 1
+        }
+        else {
+            return false
+        }
+    }
+    return true
+}
+
+// console.log(palindromeSingleArray("saddas"))
+// console.log(palindrome("sadas"))
+// console.log(palindrome("saurav"))
+// Big O = O(n/2)
+
+
+const cartesian = (arr1, arr2) => {
+    let cartesianArr = []
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr1.length; j++) {
+            cartesianArr.push([arr1[i], arr2[j]])
+        }
+    }
+    return cartesianArr
+}
+
+// console.log(cartesian([1, 2], [3, 4]))
+// // Big O = O(n2)
+
+
+// fun()
+// function fun() {
+//     console.log(saurav)
+//     var saurav = "abc"
+// }
+
+let a = { x: "1", y: "3" }
+
+let b = a;
+
+b.x = 3
+
+console.log(a, b)
+
+// console.log(a)
 

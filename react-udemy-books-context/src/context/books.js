@@ -1,16 +1,16 @@
-import {createContext,useState, useCallback} from 'react'
+import { createContext, useState, useCallback } from 'react'
 import axios from 'axios'
 
 const BooksContext = createContext()
 
-function Provider({children}){
+function Provider({ children }) {
     const [books, setBooks] = useState([])
 
-    const fetchBooks = useCallback (async () => {
+    const fetchBooks = useCallback(async () => {
         const response = await axios.get("http://localhost:3001/books")
 
         setBooks(response.data)
-    },[]);
+    }, []);
 
     const handleCreateBook = async (title) => {
         // BAD Code
@@ -41,8 +41,8 @@ function Provider({children}){
 
     const editBookByID = async (id, title) => {
 
-        const response = await axios.put(`http://localhost:3001/books/${id}`,{
-            title:title
+        const response = await axios.put(`http://localhost:3001/books/${id}`, {
+            title: title
         })
 
         const updatedBooks = books.map((book) => {
@@ -55,15 +55,15 @@ function Provider({children}){
         setBooks(updatedBooks)
     }
 
-    const valueToShare={
-        books:books,
-        fetchBooks:fetchBooks,
-        handleCreateBook:handleCreateBook,
-        editBookByID:editBookByID,
-        deleteBookById:deleteBookById
+    const valueToShare = {
+        books: books,
+        fetchBooks: fetchBooks,
+        handleCreateBook: handleCreateBook,
+        editBookByID: editBookByID,
+        deleteBookById: deleteBookById
     }
 
-    return(
+    return (
         <div>
             <BooksContext.Provider value={valueToShare}>
                 {children}
@@ -72,7 +72,7 @@ function Provider({children}){
     )
 }
 
-export {Provider}
+export { Provider }
 export default BooksContext;
 
 // imoport BooksContext,{Provider} from './somename'

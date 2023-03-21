@@ -1,11 +1,9 @@
-.box{
-    height: 100px;
-    width: 100px;
-    background-color: red;
-    margin: 20px 0;
+.box {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  margin: 20px 0;
 }
-
-.box.green{
-    background-color: green;
-}
-
+.box.green {
+  background-color: green;
+}/*# sourceMappingURL=BoxList.css.map */
