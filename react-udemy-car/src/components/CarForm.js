@@ -23,8 +23,7 @@ function CarForm() {
             name: name,
             cost: cost
         }))
-        dispatch(changeName(""))
-        dispatch(changeCost(""))
+
     }
 
     return (
