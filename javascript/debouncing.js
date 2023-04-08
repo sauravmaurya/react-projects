@@ -14,6 +14,8 @@ const updateddebounceText = debounce((text) => {
     debounceDiv.textContent = text
 }, 1000)
 
+
+
 function debounce(call, d) {
     let timer;
     return function () {
@@ -26,15 +28,16 @@ function debounce(call, d) {
     }
 }
 
+
 const updatedTextFunction = throttle((text) => {
     throttleDiv.textContent = text
 }, 500)
 
+
+
 function throttle(call, d) {
     let flag = true;
     return function (...args) {
-        let context = this;
-        args = arguments
         if (flag) {
             // call.apply(context, args)
             call(...args)

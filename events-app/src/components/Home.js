@@ -5,8 +5,8 @@ import EventList from './EventList'
 
 export default function Home() {
     const usenavigate = useNavigate()
-    const [sessionUser, setSessionUser] = useState()
-    const [sessionEmail, setSessionEmail] = useState()
+    const [sessionUser, setSessionUser] = useState(sessionStorage.getItem("username"))
+    const [sessionEmail, setSessionEmail] = useState(sessionStorage.getItem("email"))
     useEffect(() => {
         let sessionUserVal = sessionStorage.getItem("username")
         let sessionEmailValue = sessionStorage.getItem("email")

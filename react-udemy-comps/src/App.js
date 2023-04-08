@@ -6,6 +6,7 @@ import ButtonPage from './pages/ButtonPage';
 import ModalPage from './pages/ModalPage'
 import CounterPage from './pages/CounterPage';
 import CounterFeaturesPage from './pages/CounterFeaturesPage';
+import TablePage from './pages/TablePage'
 
 function App() {
 
@@ -25,6 +26,9 @@ function App() {
                 </Route>
                 <Route path="/modal">
                     <ModalPage></ModalPage>
+                </Route>
+                <Route path="/table">
+                    <TablePage></TablePage>
                 </Route>
                 <Route path="/counter">
                     <CounterPage initialCounter={10}></CounterPage>

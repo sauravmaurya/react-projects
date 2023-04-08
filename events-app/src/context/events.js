@@ -6,10 +6,10 @@ const EventsContext = createContext()
 function Provider({ children }) {
     const [events, setEvents] = useState([])
 
-    const fetchEvents = useCallback(async (email) => {
+    const fetchEvents = async (email) => {
         const response = await axios.get(`http://localhost:3001/users/${email}`)
         setEvents(response.data.events)
-    }, []);
+    }
 
     const createEvent = async (data, email) => {
         // const getResponse = await axios.get(`http://localhost:3001/users/${email}`)

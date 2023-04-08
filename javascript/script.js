@@ -56,8 +56,42 @@
 // }
 
 
+function add(...args) {
+    let sum = [...args]
+    function value() {
+        return sum.reduce((a, b) => {
+            return a + b
+        })
+    }
+    const temp = function (...args) {
 
-// console.log(add(2)(3)(8)())
+        if (args.length) {
+            sum = [...sum, ...args]
+            return temp
+        }
+        else {
+            return sum.reduce((a, b) => {
+                return a + b
+            })
+        }
+    }
+
+    temp.value = function () {
+        return sum.reduce((a, b) => {
+            return a + b
+        })
+    }
+
+    // this.value = function () {
+    //     return sum.reduce((a, b) => {
+    //         return a + b
+    //     })
+    // }
+
+    return temp
+}
+
+// console.log(add(3, 4).value())
 
 // function calc(number){
 //     let sum=0
@@ -349,13 +383,13 @@
 
 
 
-const a1 = new Map([["a", "b"], ["b", "c"], ["c", "d"]])
+// const a1 = new Map([["a", "b"], ["b", "c"], ["c", "d"]])
 
-console.log(a1.get("a"))
-let b1 = a1.keys()
-for (let x in a1) {
-    console.log(a1[x])
-}
+// console.log(a1.get("a"))
+// let b1 = a1.keys()
+// for (let x in a1) {
+//     console.log(a1[x])
+// }
 
 
 // rest operator (numbers to array)
@@ -433,3 +467,146 @@ for (let x in a1) {
 
 // const sing1 = new Singer()
 // console.log(sing1.sing(), sing1.talk())
+
+
+// function Person(name, age) {
+//     this.balance = 0;
+//     this.name = name;
+//     this.age = age;
+//     this.id = Date.now();
+
+// this.deposit = function (value) {
+//     this.balance = this.balance + value;
+// };
+
+// this.withdraw = function (value) {
+//     this.balance = this.balance - value;
+// };
+// }
+
+// Person.prototype.deposit = function (value) {
+//     this.balance = this.balance + value;
+// };
+
+// Person.prototype.withdraw = function (value) {
+//     this.balance = this.balance - value;
+// };
+
+// const data = [];
+
+// const obj = new Person("saurav", 35);
+// data.push(obj);
+// console.log(data);
+// data[0].deposit(5000)
+// console.log(data[0].balance)
+
+
+// function foo() {
+//     return {
+//         name: "saurav"
+//     }
+// }
+
+// console.log(foo())
+
+
+
+// const input1 = [
+//     { id: 1, name: "test1" },
+//     { id: 2, name: "test2" },
+//     { id: 2, name: "test3" },
+//     { id: 3, name: "test4" },
+//     { id: 4, name: "test5" },
+//     { id: 5, name: "test6" },
+//     { id: 5, name: "test7" },
+//     { id: 6, name: "test8" }
+// ];
+
+
+// const arr = []
+
+// const newArr = input1.filter((elem) => {
+//     const isDuplicate = arr.includes(elem.id)
+
+//     if (!isDuplicate) {
+//         arr.push(elem.id)
+//         return true
+//     }
+//     return false
+// })
+
+// console.log(arr, newArr)
+
+
+
+// function myTimeout() {
+//     return {
+//         timerArray: [],
+//         mySetTimeout: function (fn, delay) {
+
+//             return this
+//         },
+//         clearAllTimeout: function () {
+//             console.log("clear")
+//         }
+//     }
+// }
+
+// const myFunction = myTimeout()
+
+// myFunction.mySetTimeout(() => {
+//     console.log("1")
+// }, 1000)
+
+// myFunction.mySetTimeout(() => {
+//     console.log("2")
+// }, 2000)
+
+// setTimeout(() => {
+//     myFunction.clearAllTimeout()
+// }, 2500)
+
+// myFunction.mySetTimeout(() => {
+//     console.log("3")
+// }, 3000)
+
+// myFunction.mySetTimeout(() => {
+//     console.log("4")
+// }, 4000)
+
+
+
+
+
+
+
+
+
+// let embedoj = {
+//     a: 1,
+//     b: { c: 1, d: 2 },
+//     e: { f: { g: 3, k: 9 } },
+//     h: 4
+// }
+
+
+
+// const flattenObj = function (obj) {
+//     let flattenobj = {}
+//     let key;
+//     for (let i in obj) {
+//         key = i;
+//         if (typeof obj[i] === "object") {
+//             const temp = flattenObj(obj[i])
+//             for (let j in temp) {
+//                 flattenobj[`${i}.${j}`] = temp[j]
+//             }
+//         }
+//         else {
+//             flattenobj[key] = obj[i]
+//         }
+//     }
+//     return flattenobj
+// }
+
+// console.log(flattenObj(embedoj))

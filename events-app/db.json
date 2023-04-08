@@ -4,7 +4,24 @@
       "id": "admin.admin@gmail.com",
       "uname": "admin",
       "password": "Admin@29",
-      "events": []
+      "events": [
+        {
+          "id": 1679372388390,
+          "name": "Holi",
+          "date": "2023-03-10",
+          "description": "Holi Festival is here. Join us for the festival party",
+          "price": "300",
+          "category": "normal"
+        },
+        {
+          "id": 1679817707855,
+          "name": "Diwali",
+          "date": "2023-03-08",
+          "description": "Diwali festival is the festival of lights. Lets ceebrate together....",
+          "price": "235",
+          "category": "premium"
+        }
+      ]
     }
   ]
 }

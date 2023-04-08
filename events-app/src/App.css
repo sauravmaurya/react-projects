@@ -74,7 +74,7 @@ ul {
   text-decoration: none;
 }
 
-.home_header.home-username{
+.home_header .home-username{
   font-weight: bold;
 }
 

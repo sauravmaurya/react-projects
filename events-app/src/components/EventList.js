@@ -5,13 +5,15 @@ import EventCard from './EventCard';
 function EventList({ email }) {
     const { events, fetchEvents } = useContext(EventsContext)
     useEffect(() => {
-        async function fetchdata() {
-            fetchEvents(email)
-        }
-        fetchdata()
-    }, [])
+        console.log(email)
+        // async function fetchdata() {
 
-    console.log(events)
+        // }
+        // fetchdata()
+
+        fetchEvents(email)
+
+    }, [])
 
     const renderedList = events.map((event) => {
         return <EventCard eventData={event} email={email} />
