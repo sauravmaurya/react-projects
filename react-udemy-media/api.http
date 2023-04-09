@@ -1,0 +1,48 @@
+
+#Get all users
+GET http://localhost:3001/users HTTP/1.1
+Content-Type: application/json
+
+
+###
+#Crete a user
+
+POST http://localhost:3001/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "saurav.mauhgfhgcrya123@gmail.com",
+      "password": "Saurav@29",
+      "uname": "Saurav",
+      "events":[{"name":"saurav"}]
+}
+
+###
+#Update a user
+
+PUT http://localhost:3001/users/saurav.maurya@gmail.com HTTP/1.1
+Content-Type: application/json
+
+{
+    "uname":"saurav",
+    "password":"saurav@29",
+      "events":[{"name":"saurav"}]
+
+}
+
+###
+#Delete a user
+
+DELETE http://localhost:3005/users/5 HTTP/1.1
+Content-Type:application/json
+
+###
+PATCH http://localhost:3001/users/saurav.maurya@gmail.com HTTP/1.1
+Content-Type: application/json
+
+{
+      "events":[{"name":"saurav"}]
+}
+
+###
+
