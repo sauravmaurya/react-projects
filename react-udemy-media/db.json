@@ -1,18 +1,54 @@
 {
   "users": [
     {
-      "name": "Dr. Guy Funk",
+      "name": "Alexandra Marquardt",
       "id": 2
     },
     {
-      "name": "Nelson Herzog",
+      "name": "Jerry Rodriguez",
       "id": 3
     },
     {
-      "name": "Eleanor Tromp",
+      "name": "Rick Heller",
       "id": 4
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "userId": 3,
+      "title": "Tasty Granite Car",
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "title": "Small Fresh Soap",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "title": "Bespoke Granite Pants",
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "title": "Sleek Frozen Chicken",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "title": "Rustic Rubber Bacon",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "title": "Ergonomic Soft Ball",
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "title": "Fantastic Fresh Tuna",
+      "id": 12
+    }
+  ],
   "photos": []
 }
