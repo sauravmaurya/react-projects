@@ -15,40 +15,146 @@
   ],
   "albums": [
     {
-      "userId": 3,
-      "title": "Tasty Granite Car",
-      "id": 1
-    },
-    {
-      "userId": 3,
-      "title": "Small Fresh Soap",
-      "id": 2
-    },
-    {
-      "userId": 2,
-      "title": "Bespoke Granite Pants",
-      "id": 3
-    },
-    {
       "userId": 4,
       "title": "Sleek Frozen Chicken",
       "id": 4
     },
     {
       "userId": 2,
-      "title": "Rustic Rubber Bacon",
+      "title": "Luxurious Bronze Computer",
+      "id": 13
+    },
+    {
+      "userId": 3,
+      "title": "Small Steel Keyboard",
+      "id": 14
+    },
+    {
+      "userId": 4,
+      "title": "Modern Soft Chair",
+      "id": 17
+    },
+    {
+      "userId": 2,
+      "title": "Practical Soft Computer",
+      "id": 18
+    },
+    {
+      "userId": 4,
+      "title": "Electronic Fresh Mouse",
+      "id": 20
+    },
+    {
+      "userId": 3,
+      "title": "Elegant Wooden Shirt",
+      "id": 21
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 13,
+      "url": "https://loremflickr.com/150/150/abstract?lock=26559",
+      "id": 1
+    },
+    {
+      "albumId": 18,
+      "url": "https://loremflickr.com/150/150/abstract?lock=36939",
+      "id": 4
+    },
+    {
+      "albumId": 13,
+      "url": "https://loremflickr.com/150/150/abstract?lock=76791",
+      "id": 6
+    },
+    {
+      "albumId": 18,
+      "url": "https://loremflickr.com/150/150/abstract?lock=6911",
+      "id": 7
+    },
+    {
+      "albumId": 13,
+      "url": "https://loremflickr.com/150/150/abstract?lock=71876",
       "id": 8
     },
     {
-      "userId": 2,
-      "title": "Ergonomic Soft Ball",
+      "albumId": 14,
+      "url": "https://loremflickr.com/150/150/abstract?lock=10802",
+      "id": 9
+    },
+    {
+      "albumId": 14,
+      "url": "https://loremflickr.com/150/150/abstract?lock=16347",
+      "id": 10
+    },
+    {
+      "albumId": 21,
+      "url": "https://loremflickr.com/150/150/abstract?lock=43039",
       "id": 11
     },
     {
-      "userId": 2,
-      "title": "Fantastic Fresh Tuna",
+      "albumId": 21,
+      "url": "https://loremflickr.com/150/150/abstract?lock=37057",
       "id": 12
+    },
+    {
+      "albumId": 21,
+      "url": "https://loremflickr.com/150/150/abstract?lock=30500",
+      "id": 13
+    },
+    {
+      "albumId": 4,
+      "url": "https://loremflickr.com/150/150/abstract?lock=26323",
+      "id": 14
+    },
+    {
+      "albumId": 4,
+      "url": "https://loremflickr.com/150/150/abstract?lock=19167",
+      "id": 15
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=5761",
+      "id": 16
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=19638",
+      "id": 17
+    },
+    {
+      "albumId": 20,
+      "url": "https://loremflickr.com/150/150/abstract?lock=66141",
+      "id": 18
+    },
+    {
+      "albumId": 20,
+      "url": "https://loremflickr.com/150/150/abstract?lock=80428",
+      "id": 19
+    },
+    {
+      "albumId": 20,
+      "url": "https://loremflickr.com/150/150/abstract?lock=50025",
+      "id": 20
+    },
+    {
+      "albumId": 18,
+      "url": "https://loremflickr.com/150/150/abstract?lock=24488",
+      "id": 21
+    },
+    {
+      "albumId": 18,
+      "url": "https://loremflickr.com/150/150/abstract?lock=32689",
+      "id": 22
+    },
+    {
+      "albumId": 13,
+      "url": "https://loremflickr.com/150/150/abstract?lock=20329",
+      "id": 23
+    },
+    {
+      "albumId": 13,
+      "url": "https://loremflickr.com/150/150/abstract?lock=18243",
+      "id": 24
     }
-  ],
-  "photos": []
+  ]
 }

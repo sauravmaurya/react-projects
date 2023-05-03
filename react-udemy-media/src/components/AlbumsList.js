@@ -1,12 +1,11 @@
 import React from 'react'
 import { useFetchAlbumsQuery, useAddAlbumMutation } from '../store'
 import Skeleton from './Skeleton'
-import ExpandalePanel from './ExpandalePanel'
 import Button from './Button'
 import AlbumsListItem from './AlbumsListItem'
 
 function AlbumsList({ user }) {
-    const { data, error, isLoading } = useFetchAlbumsQuery(user)
+    const { data, error, isFetching } = useFetchAlbumsQuery(user)
     const [addAlbum, results] = useAddAlbumMutation()
 
     const handleAddAlbum = () => {
@@ -15,7 +14,7 @@ function AlbumsList({ user }) {
 
     let content
 
-    if (isLoading) {
+    if (isFetching) {
         content = <Skeleton className="h-10 w-full" times={3}></Skeleton>
     }
     else if (error) {

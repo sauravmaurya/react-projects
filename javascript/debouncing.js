@@ -2,7 +2,7 @@ const defaultDiv = document.getElementById("default")
 const debounceDiv = document.getElementById("debounce")
 const throttleDiv = document.getElementById("throttle")
 const input = document.querySelector("input")
-console.log(input, defaultDiv, debounceDiv, throttleDiv)
+// console.log(input, defaultDiv, debounceDiv, throttleDiv)
 
 input.addEventListener("input", (e) => {
     defaultDiv.textContent = e.target.value
