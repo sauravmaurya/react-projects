@@ -28,7 +28,7 @@
 // document.querySelectorAll("button")[0].addEventListener("click",button1Handler)
 
 // function Outerone(){
-//     var counter =0;
+//     var counter = 0;
 //      this.increment= function(){
 //         counter=counter+1
 //         console.log(counter)
@@ -202,6 +202,9 @@
 // console.time()
 // console.log(sumMemo)
 // console.timeEnd()
+
+
+// Call,bind,apply
 
 // function Person(first,middle,last,gender){
 //     this.firstName=first;
@@ -656,7 +659,7 @@
 
 
 
-// let embedoj = {
+// let embedobj = {
 //     a: 1,
 //     b: { c: 1, d: 2 },
 //     e: { f: { g: 3, k: 9 } },
@@ -682,7 +685,7 @@
 //     return flattenobj
 // }
 
-// console.log(flattenObj(embedoj))
+// console.log(flattenObj(embedobj))
 
 
 
@@ -927,7 +930,7 @@
 // whereAmI(-33.933, 18.474)
 
 
-// Promise.resolve Promise.reject
+// Promise.resolve /Promise.reject
 // console.log("Test Start")
 // setTimeout(() => {
 //     console.log("0 Sec Timer")
@@ -1077,24 +1080,28 @@
 //     .catch(err => console.log(err))
 
 
+// Promise.all polyfill
 
-// function add(a) {
-//     let sum = a;
-
-//     const helper = function (b) {
-//         if (b) {
-//             sum += b;
-//             return this
-//         }
-//         else {
-//             return sum
-//         }
-//     }
-
-//     return { helper }
-
+// const dummyapi = (time) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(time)
+//         }, time)
+//     })
 // }
 
+// const promiseAllPollyfill = (promiseArray) => {
+//     return new Promise((resolve, reject) => {
+//         const output = []
+//         promiseArray.forEach((promise, index) => {
+//             promise.then((data) => {
+//                 output[index] = data
+//                 if (index === promiseArray.length - 1) resolve(output)
+//             })
+//                 .catch(err => reject(err))
+//         })
+//     })
+// }
 
-// console.log(add(2).helper(5).helper(7).helper())
+// promiseAllPollyfill([dummyapi(1000), dummyapi(2000), dummyapi(5000)]).then(data => console.log(data)).catch(err => console.log(err))
 
