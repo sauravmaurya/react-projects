@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Test1 from "./components/test1/test1";
+import Test3 from "./components/test3/test3";
+import Skills from "./components/skills/skills";
+import Counter from "./components/counter/counter";
 
 function App() {
+  // const skills = ["HTML", "CSS", "JS"];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Test1 /> */}
+      {/* <Test3 />
+      <Skills skills={skills} /> */}
+      <Counter />
+    </>
   );
 }
 
