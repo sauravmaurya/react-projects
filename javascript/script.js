@@ -445,13 +445,13 @@
 
 
 // function cuurrying
-// function f1(a){
-//     return function(b){
-//         if(b) return f1(a+b)
+// function f1(a) {
+//     return function (b) {
+//         if (b) return f1(a + b)
 //         return a
 //     }
 // }
-// const number=f1(1)(2)(100)(20)(0)
+// const number = f1(1)(2)(100)(20)(0)
 
 // console.log(number)
 
