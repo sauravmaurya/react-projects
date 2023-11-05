@@ -26,3 +26,10 @@ const flattenObj = function (obj) {
 
 console.log(flattenObj(embedobj))
 
+const a1 = new Map([["a", "b"], ["b", "c"], ["c", "d"]])
+
+console.log(a1.get("a"))
+let b1 = a1.keys()
+for (let x in a1) {
+    console.log(a1[x])
+}
