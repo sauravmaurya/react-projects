@@ -21,7 +21,7 @@ const flattenObj = function (obj) {
             flattenobj[key] = obj[i]
         }
     }
-    return flattenobj
+    return flattenobjq
 }
 
 console.log(flattenObj(embedobj))
@@ -38,4 +38,4 @@ const sum = function (a, b, ...args) {
     return sum
 }
 
-// console.log(sum(1,2,3,1,2,3))
+console.log(sum(1, 2, 3, 1, 2, 3))
