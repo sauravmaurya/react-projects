@@ -3,7 +3,7 @@ let embedobj = {
     b: { c: 1, d: 2 },
     e: { f: { g: 3, k: 9 } },
     h: 4,
-    i:{j:7}
+    i: { j: 7 }
 }
 
 const flattenObj = function (obj) {
