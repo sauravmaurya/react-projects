@@ -21,7 +21,7 @@ const flattenObj = function (obj) {
             flattenobj[key] = obj[i]
         }
     }
-    return flattenobjq
+    return flattenobj
 }
 
 console.log(flattenObj(embedobj))
