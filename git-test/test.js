@@ -26,16 +26,3 @@ const flattenObj = function (obj) {
 
 console.log(flattenObj(embedobj))
 
-// #copy1 branch code
-
-const sum = function (a, b, ...args) {
-    console.log(a + b)
-    console.log(args)
-    let sum = 0
-    for (let x of args) {
-        sum += x
-    }
-    return sum
-}
-
-console.log(sum(1, 2, 3, 1, 2, 3))
