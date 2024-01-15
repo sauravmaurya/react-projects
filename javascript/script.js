@@ -657,7 +657,7 @@
 
 
 
-
+// FlattenObj without key
 
 // let embedobj = {
 //     a: 1,
@@ -667,25 +667,49 @@
 // }
 
 
-// const flattenObj = function (obj) {
-//     let flattenobj = {}
-//     let key;
+// const flattenObj = (obj, key) => {
+//     let flatObj = {}
+//     let keyVal
 //     for (let i in obj) {
-//         key = i;
+//         keyVal = key ? key + "." + i : i
 //         if (typeof obj[i] === "object") {
 //             const temp = flattenObj(obj[i])
 //             for (let j in temp) {
-//                 flattenobj[`${i}.${j}`] = temp[j]
+//                 flatObj[`${keyVal}.${j}`] = temp[j]
 //             }
 //         }
 //         else {
-//             flattenobj[key] = obj[i]
+//             flatObj[`${keyVal}`] = obj[i]
 //         }
 //     }
-//     return flattenobj
+//     return flatObj
 // }
 
-// console.log(flattenObj(embedobj))
+
+
+// second approach
+
+
+// function flattenObj(obj, parentKey = null, res = {}) {
+//     for (let key in obj) {
+//         const propName = parentKey ? parentKey + "." + key : key
+//         if (typeof (obj[key]) === "object") {
+//             flattenObj(obj[key], propName, res)
+//         } else {
+//             res[propName] = obj[key]
+//         }
+//     }
+//     return res
+// }
+
+
+// console.log(flattenObj(embedobj,"hi"))
+
+
+
+
+
+
 
 
 
@@ -1078,6 +1102,79 @@
 // ])
 //     .then(res => console.log(res))
 //     .catch(err => console.log(err))
+
+
+
+
+
+// array map pollyfill
+
+// Array.prototype.myMap = function (call) {
+//     let mapArray = []
+//     this.forEach((item) => {
+//         mapArray.push(call(item))
+//     })
+//     return mapArray
+// }
+
+// const squaredArray = [1, 2, 3, 4].myMap((item) => item ** 2)
+
+// console.log(squaredArray)
+
+
+
+
+
+
+
+// call,bind pollyfill
+
+// const obj = {
+//     first: "saurav",
+//     last: "maurya",
+
+// }
+
+// const getFull = function (age) {
+//     return `${this.first} ${this.last} ${age}`
+// }
+
+
+// const obj1 = {
+//     first: "sangita",
+//     last: "rani",
+//     age: 52
+// }
+
+// const bindObj1 = getFull.bind(obj)
+
+// console.log(bindObj1(23))
+// console.log(getFull.call(obj1, age))
+
+
+// Function.prototype.myCall = function (ref, ...args) {
+//     return this.apply(ref, args)
+// }
+
+// console.log(getFull.myCall(obj1, 23))
+
+
+// Function.prototype.myBind = function (ref) {
+//     return (...args) => {
+//         return this.apply(ref, args)
+//     }
+// }
+
+// const mybindObj = getFull.myBind(obj1)
+// console.log(mybindObj(23))
+
+
+
+
+
+
+
+
 
 
 // Promise.all polyfill

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import BoxList from '../components/BoxList'
+import { useCallback } from 'react'
 
 function Home({ number }) {
 
@@ -7,19 +8,16 @@ function Home({ number }) {
     const [clickSeq, setClickSeq] = useState([])
     const [counter, setCounter] = useState(0)
 
-    const initialRender = () => {
+    const initialRender = useCallback(() => {
         let boxArr = []
         for (let i = 0; i < number; i++) {
             boxArr = [...boxArr, { id: i, isGreen: false }]
         }
         setBoxList(boxArr)
-        console.log(boxList)
-    }
+    }, [number])
 
 
     const handleBoxClick = (id) => {
-        console.log("handleClick")
-
         const updatedList = boxList.map((elem) => {
             if (elem.id === id) {
                 if (clickSeq.includes(id)) {
@@ -29,7 +27,6 @@ function Home({ number }) {
                     return { ...elem, isGreen: false }
                 }
                 else {
-                    console.log("true")
                     setClickSeq([...clickSeq, id])
                     return { ...elem, isGreen: true }
                 }
@@ -38,18 +35,32 @@ function Home({ number }) {
             return elem
         })
         setBoxList(updatedList)
-        console.log(clickSeq)
-        console.log(boxList)
     }
 
     useEffect(() => {
-        if (boxList.length === 0) {
-            initialRender()
-        }
+        initialRender()
+    }, [initialRender])
 
+    // if (clickSeq.length === number) {
+    //     for (let i = 0; i < number; i++) {
+    //         setTimeout(function () {
+    //             let updatedBoxList = boxList.map((elem) => {
+    //                 if (elem.id === clickSeq[i]) {
+    //                     return { ...elem, isGreen: false }
+    //                 }
+    //                 return elem
+    //             })
+    //             setBoxList(updatedBoxList)
+    //             // setCounter(counter + 1)
+    //         }, 1000)
+    //     }
+    // }
+
+    useEffect(() => {
+        console.log("inside use effect")
         let interval;
-        if (clickSeq.length === 5) {
-            if (counter < 5)
+        if (clickSeq.length === number) {
+            if (counter < number)
                 interval = setTimeout(function () {
                     let updatedBoxList = boxList.map((elem) => {
                         if (elem.id === clickSeq[counter]) {
@@ -60,7 +71,7 @@ function Home({ number }) {
                     setBoxList(updatedBoxList)
                     setCounter(counter + 1)
                 }, 1000)
-            if (counter === 5) {
+            if (counter === number) {
                 setCounter(0)
                 setClickSeq([])
             }
