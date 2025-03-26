@@ -102,7 +102,7 @@ function Todo() {
                     </figure>
                     <div className='addItems'>
                         <input placeholder="✍️ Add Item" className='form-control' value={inputData} onChange={handleInputText}></input>
-                        {isEditIcon ? <i className="far fa-edit add-btn" onClick={handleAddItem}></i> : <i className="fa fa-plus add-btn" onClick={handleAddItem}></i>}
+                        {isEditIcon ? <i className="far fa-edit add-btn" data-testid="add-button" onClick={handleAddItem}></i> : <i className="fa fa-plus add-btn" data-testid="add-button" onClick={handleAddItem}></i>}
 
                     </div>
                     {/* show our items */}
